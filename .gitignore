@@ -1,0 +1,49 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.classpath
+.project
+.settings/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Build
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Test Reports
+surefire-reports/
+failsafe-reports/
+
+# JaCoCo
+jacoco.exec
+site/
+
+# Logging
+*.log

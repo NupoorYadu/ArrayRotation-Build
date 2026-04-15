@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>array-rotation</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Array Rotation - Selenium Automation Testing</name>
+    <description>Maven project implementing array rotation by k positions (in-place) with JUnit 5 and Selenium automation testing</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <junit.version>5.9.3</junit.version>
+        <selenium.version>4.15.0</selenium.version>
+        <jacoco.version>0.8.11</jacoco.version>
+        <sonar.version>3.9.1.2184</sonar.version>
+    </properties>
+
+    <dependencies>
+        <!-- JUnit 5 (Jupiter) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Selenium WebDriver for browser automation testing -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Selenium Chrome Driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- WebDriverManager for automatic driver management -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.6.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- JaCoCo Maven Plugin for code coverage -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven JAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.ArrayRotation</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- SonarQube Maven Plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

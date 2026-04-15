@@ -86,7 +86,7 @@ pipeline {
                 echo "Build Status: SUCCESS"
                 echo "Artifacts: JAR, JaCoCo Coverage Report"
                 echo "Tests: 30+ automated test cases"
-                echo "Git Commit: ${sh(script: 'git rev-parse HEAD', returnStdout: true).trim()}"
+                echo "Git Commit: ${bat(script: 'git rev-parse HEAD', returnStdout: true).trim()}"
                 echo '========== Pipeline Complete =========='
             }
         }

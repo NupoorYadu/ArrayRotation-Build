@@ -78,6 +78,13 @@ pipeline {
             }
         }
 
+        stage('Demo Execution') {
+            steps {
+                echo '========== Running ArrayRotation Demo =========='
+                bat 'java -jar target/array-rotation-1.0.0.jar'
+            }
+        }
+
         stage('Build Summary') {
             steps {
                 echo '========== Build Summary =========='

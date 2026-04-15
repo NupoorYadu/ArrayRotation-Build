@@ -22,9 +22,9 @@
 **Array Rotation** is a fundamental data structure problem in computer science. This project demonstrates:
 
 1. **Multiple Rotation Algorithms** - Four different approaches with varying time/space complexity
-2. **Comprehensive Automation Testing** - 30+ JUnit 5 test cases covering all scenarios
+2. **Comprehensive Automation Testing** - 32 JUnit 5 test cases covering all scenarios
 3. **Git Version Control** - Full Git workflow from initial commit to production
-4. **CI/CD Pipeline** - Jenkins pipeline with 7 stages for automated builds
+4. **CI/CD Pipeline** - Jenkins pipeline with 9 stages for automated builds and demo execution
 5. **Code Coverage** - JaCoCo integration for test coverage metrics
 
 ### Key Features
@@ -339,6 +339,8 @@ Expected: [4, 5, 1, 2, 3]
 ========== Demo Complete ==========
 ```
 
+**Note:** This same demo output also appears in Jenkins console logs during the "Demo Execution" stage (Stage 8) of the pipeline!
+
 ### Test Results
 
 ```
@@ -426,18 +428,19 @@ git diff
 
 ## CI/CD Pipeline
 
-### Jenkinsfile Stages (7 stages)
+### Jenkinsfile Stages (9 stages)
 
 | Stage | Purpose | Command |
 |-------|---------|---------|
 | 1 | **Checkout** | Git clone with commit log |
 | 2 | **Build** | `mvn clean compile` |
-| 3 | **Automated Unit Tests** | `mvn test` (30+ tests) |
+| 3 | **Automated Unit Tests** | `mvn test` (32 tests) |
 | 4 | **Code Coverage** | `mvn jacoco:report` |
-| 5 | **Code Quality** | `mvn sonar:sonar` (optional) |
+| 5 | **Code Quality Analysis** | `mvn sonar:sonar` (optional) |
 | 6 | **Package** | `mvn package -DskipTests` |
 | 7 | **Archive Artifacts** | Store JAR, coverage reports |
-| 8 | **Build Summary** | Display metrics and status |
+| 8 | **Demo Execution** | Run ArrayRotation demo JAR ✨ |
+| 9 | **Build Summary** | Display metrics and Git commit |
 
 ### Jenkins Configuration
 
